@@ -1,6 +1,17 @@
 import streamlit as st
+import pandas as pd
+import altair as alt
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+st.set_page_config(
+    page_title="Simple Dashboard",
+    page_icon="🏂",
+    layout="wide",
+    initial_sidebar_state="expanded")
+
+alt.themes.enable("dark")
+
+with st.sidebar:
+    st.title('Simple Dashboard')
+    
+    color_theme_list = ['a', 'b', 'c']
+    selected_color_theme = st.selectbox('Select a value', color_theme_list)
